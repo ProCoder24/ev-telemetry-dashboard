@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lbl_Gauge1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/Gauge.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Gauge2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/Gauge2.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Tach1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/Tach.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Tach2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/Tach2.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_LINES">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/LINES.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_888_IN_CURR">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/888_IN_CURR.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_IN_CURRENT">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/IN_CURRENT.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_888_OUT_CURRENT">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/888_OUT_CURR.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_OUT_CURRENT">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/OUT_CURRENT.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_num_R">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/num_R.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_num_1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/num_1.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_num_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/num_2.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_num_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/num_3.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_num_three_bar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/num_three_bar.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MODE_M">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/MODE_M.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MODE_A">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/MODE_A.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MODE_one_bar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/MODE_one_bar.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_RPM_888">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/RPM_888.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_KM_H_888">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/KM_H_888.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_RPM">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/RPM.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_KM_H">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/KM_H.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_STATE_SYS">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/STATE_SYS.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_STATE_two_bar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/STATE_two_bar.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_STATE_P">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/STATE_P.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_STATE_R">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/STATE_R.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_STATE_E">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/STATE_E.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_888_T_MOTEUR">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/888_T_MOTEUR.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_888_T_MR">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/888_T_MR.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TEMP_DRIVE">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/TEMP_DRIVE.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_888_T_DRIVE">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/888_T_DIRVE.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TEMP_MOTEUR">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/TEMP_MOTEUR.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TEMP_MR">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>IMAGE/TEMP_MR.png</pixmap>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
