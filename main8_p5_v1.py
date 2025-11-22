@@ -249,22 +249,22 @@ class DashboardWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.animated_labels = {
             'kmh': NumberLabel(self.centralwidget, sportypo_family, 80, "deepskyblue", (1380, 590, 330, 110)),
             'rpm': NumberLabel(self.centralwidget, sportypo_family, 80, "deepskyblue", (180, 590, 330, 110)),
-            'in_curr': NumberLabel(self.centralwidget, sportypo_family, 40, "magenta", (1650, 815, 310, 110)),
-            'out_curr': NumberLabel(self.centralwidget, sportypo_family, 40, "magenta", (1650, 930, 310, 110)),
-            'temp_motor': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (360, 770, 310, 110)),
-            'temp_drive': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (360, 855, 310, 110)),
-            'temp_mr': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (360, 935, 310, 110)),
+            'in_curr': NumberLabel(self.centralwidget, sportypo_family, 40, "magenta", (1390, 760, 310, 110)),
+            'out_curr': NumberLabel(self.centralwidget, sportypo_family, 40, "magenta", (1390, 880, 310, 110)),
+            'temp_motor': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (280, 770, 310, 110)),
+            'temp_drive': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (280, 855, 310, 110)),
+            'temp_mr': NumberLabel(self.centralwidget, sportypo_family, 40, "red", (280, 935, 310, 110)),
         }
 
         self.letters_mode = {
-            'M': ColoredStatusLetter(self.centralwidget, "M", (785, 220, 150, 90), sportypo_family, 80, "lime"),
-            'A': ColoredStatusLetter(self.centralwidget, "A", (990, 220, 150, 90), sportypo_family, 80, "orange"),
+            'M': ColoredStatusLetter(self.centralwidget, "MANUEL", (715, 200, 500, 90), sportypo_family, 60, "lime"),
+            'A': ColoredStatusLetter(self.centralwidget, "AUTO", (700, 310, 500, 90), sportypo_family, 60, "orange"),
         }
         self.letters_speed = {
-            'R': ColoredStatusLetter(self.centralwidget, "R", (680, 490, 100, 90), sportypo_family, 80, "red"),
-            '1': ColoredStatusLetter(self.centralwidget, "1", (820, 490, 100, 90), sportypo_family, 80, "yellow"),
-            '2': ColoredStatusLetter(self.centralwidget, "2", (965, 490, 100, 90), sportypo_family, 80, "yellow"),
-            '3': ColoredStatusLetter(self.centralwidget, "3", (1115, 490, 100, 90), sportypo_family, 80, "yellow"),
+            'R': ColoredStatusLetter(self.centralwidget, "R", (710, 490, 100, 90), sportypo_family, 80, "red"),
+            '1': ColoredStatusLetter(self.centralwidget, "1", (840, 490, 100, 90), sportypo_family, 80, "yellow"),
+            '2': ColoredStatusLetter(self.centralwidget, "2", (980, 490, 100, 90), sportypo_family, 80, "yellow"),
+            '3': ColoredStatusLetter(self.centralwidget, "3", (1130, 490, 100, 90), sportypo_family, 80, "yellow"),
         }
         """
         self.letters_state = {
