@@ -158,10 +158,10 @@ class DashboardTester:
                     d.target_values['temp_motor'] = max(0, min(int(temp_motor), 200))
                     d.target_values['temp_mr'] = max(0, min(int(temp_mr), 200))
 
-                elif msg.arbitration_id == 0x101 and len(msg.data) >= 4:
-                    gear = int.from_bytes(msg.data[0:1], 'big', signed=True)
-                    etat = int.from_bytes(msg.data[1:2], 'big', signed=True)
-                    manuel_auto = int.from_bytes(msg.data[2:3], 'big', signed=True)
+                elif msg.arbitration_id == 0x101 and len(msg.data) >= 8:
+                    gear = int.from_bytes(msg.data[0:1], 'big', signed=False)
+                    etat = int.from_bytes(msg.data[1:2], 'big', signed=False)
+                    manuel_auto = int.from_bytes(msg.data[2:3], 'big', signed=False)
                     vitesse = int.from_bytes(msg.data[3:4], 'big', signed=False)
 
                     gear_unsigned = gear if gear >= 0 else gear + 256
@@ -191,8 +191,8 @@ class DashboardTester:
                     d.letters_speed['1'].set_status(gear_unsigned < 75)
                     d.letters_speed['2'].set_status(75 <= gear_unsigned < 125)
                     d.letters_speed['3'].set_status(125 <= gear_unsigned < 175)
-                    d.letters_mode['M'].set_status(manuel_auto_unsigned < 150)
-                    d.letters_mode['A'].set_status(manuel_auto_unsigned >= 150)
+                    d.letters_mode['M'].set_status(manuel_auto_unsigned > 150)
+                    d.letters_mode['A'].set_status(manuel_auto_unsigned < 150)
                     d.target_values['kmh'] = vitesse
 
         except Exception as e:
@@ -295,7 +295,7 @@ class DashboardWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         print("=" * 50)
 
         self.timer = QTimer(self)
-        self.timer.setInterval(50)
+        self.timer.setInterval(10)
         self.timer.timeout.connect(self.updateData)
         self.timer.start()
 
