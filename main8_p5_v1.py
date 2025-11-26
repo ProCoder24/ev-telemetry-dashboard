@@ -163,7 +163,7 @@ class DashboardTester:
                     vitesse      = int.from_bytes(msg.data[3:4], 'big', signed=False)
                     temp_mr      = int.from_bytes(msg.data[4:5], 'big', signed=False)
                     rpm          = int.from_bytes(msg.data[5:6], 'big', signed=False)
-                    curren_outAC = int.from_bytes(msg.data[6:7], 'big', signed=False)
+                    curren_outAC = int.from_bytes(msg.data[6:8], 'big', signed=False)
                     # msg.data[7] left for future use/filling/unneeded
 
                     gear_unsigned = gear if gear >= 0 else gear + 256
@@ -201,7 +201,7 @@ class DashboardTester:
 
                     d.target_values['kmh'] = vitesse
                     d.target_values['temp_mr'] = max(25, temp_mr)
-                    d.target_values['rpm'] = rpm
+                    d.target_values['rpm'] = rpm *100
                     d.target_values['out_curr'] = curren_outAC
 
         except Exception as e:
@@ -261,8 +261,8 @@ class DashboardWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.animated_labels = {
             'kmh': NumberLabel(self.centralwidget, sportypo_family, 60, "deepskyblue", (1380, 590, 330, 110)),
             'rpm': NumberLabel(self.centralwidget, sportypo_family, 60, "deepskyblue", (180, 590, 330, 110)),
-            'in_curr': NumberLabel(self.centralwidget, sportypo_family, 30, "magenta", (1330, 730, 310, 110)),
-            'out_curr': NumberLabel(self.centralwidget, sportypo_family, 30, "magenta", (1330, 850, 310, 110)),
+            'in_curr': NumberLabel(self.centralwidget, sportypo_family, 50, "magenta", (1330, 730, 310, 110)),
+            'out_curr': NumberLabel(self.centralwidget, sportypo_family, 50, "magenta", (1330, 850, 310, 110)),
             'temp_motor': NumberLabel(self.centralwidget, sportypo_family, 30, "red", (320, 742, 310, 110)),
             'temp_drive': NumberLabel(self.centralwidget, sportypo_family, 30, "red", (320, 825, 310, 110)),
             'temp_mr': NumberLabel(self.centralwidget, sportypo_family, 30, "red", (320, 905, 310, 110)),
@@ -302,7 +302,7 @@ class DashboardWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         print("=" * 50)
 
         self.timer = QTimer(self)
-        self.timer.setInterval(50)
+        self.timer.setInterval(40)
         self.timer.timeout.connect(self.updateData)
         self.timer.start()
 
