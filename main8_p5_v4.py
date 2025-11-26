@@ -1,5 +1,4 @@
 import sys
-
 import os
 #os.chdir("/home/userpi/Py_Dash_F2")
 
@@ -126,11 +125,10 @@ class DashboardTester:
             return
         d = self.dashboard
         try:
-
             while True:
-                msg = self.bus.recv(timeout=0)  # zero timeout, get all messages
+                msg = self.bus.recv(timeout=0)
                 if msg is None:
-                    break  # nothing waiting
+                    break
                 print(f"ID: {msg.arbitration_id}, DLC: {msg.dlc}, DATA: {msg.data}")
                 print(
                     f"CAN RX: arb_id=0x{msg.arbitration_id:X}, len={msg.dlc}, data={msg.data.hex()}"
@@ -154,15 +152,19 @@ class DashboardTester:
                         f"VESC STATUS_4: temp_drive={temp_drive}, temp_motor={temp_motor}, in_current={current_in}, temp_mr={temp_mr}"
                     )
                     d.target_values['in_curr'] = max(0, min(int(current_in), 500))
-                    d.target_values['temp_drive'] = max(0, min(int(temp_drive), 200))
-                    d.target_values['temp_motor'] = max(0, min(int(temp_motor), 200))
-                    d.target_values['temp_mr'] = max(0, min(int(temp_mr), 200))
+                    d.target_values['temp_drive'] = max(25, min(int(temp_drive), 200))
+                    d.target_values['temp_motor'] = max(25, min(int(temp_motor), 200))
+                    d.target_values['temp_mr'] = max(25, min(int(temp_mr), 200))
 
                 elif msg.arbitration_id == 0x101 and len(msg.data) >= 8:
-                    gear = int.from_bytes(msg.data[0:1], 'big', signed=False)
-                    etat = int.from_bytes(msg.data[1:2], 'big', signed=False)
-                    manuel_auto = int.from_bytes(msg.data[2:3], 'big', signed=False)
-                    vitesse = int.from_bytes(msg.data[3:4], 'big', signed=False)
+                    gear         = int.from_bytes(msg.data[0:1], 'big', signed=False)
+                    etat         = int.from_bytes(msg.data[1:2], 'big', signed=False)
+                    manuel_auto  = int.from_bytes(msg.data[2:3], 'big', signed=False)
+                    vitesse      = int.from_bytes(msg.data[3:4], 'big', signed=False)
+                    temp_mr      = int.from_bytes(msg.data[4:5], 'big', signed=False)
+                    rpm          = int.from_bytes(msg.data[5:6], 'big', signed=False)
+                    curren_outAC = int.from_bytes(msg.data[6:7], 'big', signed=False)
+                    # msg.data[7] left for future use/filling/unneeded
 
                     gear_unsigned = gear if gear >= 0 else gear + 256
                     etat_unsigned = etat if etat >= 0 else etat + 256
@@ -173,9 +175,11 @@ class DashboardTester:
                         f"GEAR={gear} ({gear_unsigned}), "
                         f"ETAT={etat} ({etat_unsigned}), "
                         f"MANUEL_AUTO={manuel_auto} ({manuel_auto_unsigned}), "
-                        f"VITESSE={vitesse}"
+                        f"VITESSE={vitesse}, "
+                        f"TEMP_MR={temp_mr}, "
+                        f"RPM={rpm}, "
+                        f"Curren_outAC={curren_outAC}"
                     )
-
 
                     if hasattr(d, 'circle_state_indicator') and d.circle_state_indicator:
                         if etat_unsigned < 75:
@@ -196,6 +200,9 @@ class DashboardTester:
                     d.letters_mode['A'].set_status(manuel_auto_unsigned < 150)
 
                     d.target_values['kmh'] = vitesse
+                    d.target_values['temp_mr'] = max(25, temp_mr)
+                    d.target_values['rpm'] = rpm
+                    d.target_values['out_curr'] = curren_outAC
 
         except Exception as e:
             print("CAN read error:", e)
@@ -271,8 +278,6 @@ class DashboardWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             '2': ColoredStatusLetter(self.centralwidget, "2", (980, 490, 100, 90), sportypo_family, 60, "yellow"),
             '3': ColoredStatusLetter(self.centralwidget, "3", (1130, 490, 100, 90), sportypo_family, 60, "yellow"),
         }
-
-
 
         self.circle_state_indicator = ColoredCircleIndicator(
             self.centralwidget,

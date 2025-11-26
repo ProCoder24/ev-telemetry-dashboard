@@ -157,7 +157,7 @@ class DashboardTester:
                     d.target_values['temp_mr'] = max(20, min(int(temp_mr), 200))
 
                 elif msg.arbitration_id == 0x101 and len(msg.data) >= 8:
-                    # FULL FIELD DECODING AS PER SIGNAL TABLE
+
                     gear         = int.from_bytes(msg.data[0:1], 'big', signed=False)
                     etat         = int.from_bytes(msg.data[1:2], 'big', signed=False)
                     manuel_auto  = int.from_bytes(msg.data[2:3], 'big', signed=False)
@@ -201,7 +201,7 @@ class DashboardTester:
                     d.letters_mode['A'].set_status(manuel_auto_unsigned < 150)
 
                     d.target_values['kmh'] = vitesse
-                    d.target_values['temp_mr'] = max(20, temp_mr)        # Temp always at least 20°C
+                    d.target_values['temp_mr'] = max(20, temp_mr)
                     d.target_values['rpm'] = rpm
                     d.target_values['out_curr'] = curren_outAC
 
