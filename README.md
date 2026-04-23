@@ -12,9 +12,9 @@ This project visualizes **vehicle telemetry data transmitted over CAN bus**, inc
 
 The system operates as follows:
 
-- The **Vehicle Control Unit (VCU)** generates real-time vehicle data  
+- The **Vehicle Control Unit (VCU)** processes real-time vehicle data 
 - Data is transmitted over the **CAN bus**  
-- A **Raspberry Pi Zero W + CAN HAT** receives and decodes the CAN messages  
+- A **Raspberry Pi 4B + CAN HAT** receives and decodes the CAN messages  
 - The **PyQt6 dashboard** displays the data via HDMI in real time  
 
 ---
