@@ -1,8 +1,8 @@
-# EV Telemetry Dashboard (PyQt6)
+# EV Telemetry Dashboard
 
 Real-time dashboard for an electric pickup prototype, built with PyQt6.
 
-This project visualizes **vehicle telemetry data transmitted over CAN bus**, including speed, RPM, temperatures, current, and system state, through a custom graphical dashboard.
+This project allows to visualizes **vehicle telemetry data transmitted over CAN bus**, including speed, RPM, temperatures, current, and system state, through a custom graphical dashboard.
 
 ---
 
